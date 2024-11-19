@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StreamingHub.Pages.Configuracoes"
+             Title="Configuracoes">
+
+    <ScrollView>
+        <VerticalStackLayout 
+            Padding="20">
+
+            <Label 
+                Text="Nome Criador:"
+                FontSize="20"
+                HorizontalOptions="Start" />
+            <Entry 
+                BackgroundColor="LightGray"
+                FontSize="18"
+                HorizontalOptions="FillAndExpand"
+                Margin="10" />
+
+            <Label 
+                Text="Foto Perfil:"
+                FontSize="20"
+                HorizontalOptions="Start" />
+            <Image Source="dotnet_bot.png" />
+
+            <Button 
+                Text="Salvar Alterações"
+                HeightRequest="50"
+                BackgroundColor="Blue"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="End" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

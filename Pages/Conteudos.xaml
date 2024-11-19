@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StreamingHub.Pages.Conteudos"
+             Title="Conteudos">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label 
+                Text="Todos os Conteudos"
+                FontSize="20"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+
+            <ListView ItemsSource="{Binding ConteudosList}">
+                <ListView.ItemTemplate>
+                    <DataTemplate> 
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="10">
+                                <Image Source="{Binding Image}" WidthRequest="50" HeightRequest="50" Margin="0,0,10,0" />
+                                <StackLayout>
+                                    <Label Text="{Binding Name}" FontSize="18" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

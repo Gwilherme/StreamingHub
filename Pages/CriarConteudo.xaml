@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StreamingHub.Pages.CriarConteudo"
+             Title="Criar Conteudo">
+
+    <ScrollView>
+        <VerticalStackLayout 
+            Padding="20">
+
+            <Label 
+                Text="Selecione o Tipo do Conteudo:"
+                FontSize="20"
+                HorizontalOptions="Start" />
+            <Grid>
+                <Label 
+                    Text="Audio:"
+                    FontSize="18"
+                    HorizontalOptions="Start" />
+                <CheckBox 
+                    IsChecked="False"/>
+            </Grid>
+            <Grid>
+                <Label 
+                    Text="Video:"
+                    FontSize="18"
+                    HorizontalOptions="Start" />
+                <CheckBox 
+                    IsChecked="True"/>
+            </Grid>
+
+            <Label 
+                Text="Titulo:"
+                FontSize="20"
+                HorizontalOptions="Start" />
+            <Entry 
+                Placeholder="Digite o Titulo do seu Conteudo"
+                BackgroundColor="LightGray"
+                FontSize="18"
+                HorizontalOptions="FillAndExpand"
+                Margin="10" />
+
+            <Label 
+                Text="Descrição:"
+                FontSize="20"
+                HorizontalOptions="Start" />
+            <Editor 
+                Placeholder="Escreva um pouco sobre o seu Conteudo"
+                BackgroundColor="LightGray"
+                TextColor="Black"
+                FontSize="16"
+                HeightRequest="150"
+                Margin="10" />
+
+            <Label 
+                Text="PlayList:"
+                FontSize="20"
+                HorizontalOptions="Start" />
+            <ListView ItemsSource="{Binding PlayLists}" ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="10">
+                                <StackLayout>
+                                    <Label Text="{Binding Name}" FontSize="18" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Entry 
+                Placeholder="Selecione o Arquivo"
+                BackgroundColor="LightGray"
+                FontSize="18"
+                HorizontalOptions="FillAndExpand" 
+                Margin="10" />
+
+            <Button 
+                 Text="Postar Conteudo"
+                 HeightRequest="50"
+                 BackgroundColor="Blue"
+                 HorizontalOptions="FillAndExpand"
+                 VerticalOptions="End" />
+
+        </VerticalStackLayout>        
+    </ScrollView>
+    
+</ContentPage>
