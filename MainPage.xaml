@@ -50,7 +50,55 @@
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="End"
                     Clicked="OnNavigateButtonClicked" /> 
-        </Grid>
-    </Grid>
+        
+	<Button Width="100" Height="40" Background="#0078D4" Foreground="White" FontSize="16" BorderBrush="#005A8B" BorderThickness="2">
+		<Button.Style>
+			<Style TargetType="Button">
+				<!-- Define o VisualStateManager com estados normais e pressionados -->
+				<Style.Triggers>
+					<EventTrigger RoutedEvent="Button.Click">
+						<BeginStoryboard>
+							<Storyboard>
+								<!-- Animação para mudar a cor de fundo quando o botão é pressionado -->
+								<ColorAnimation
+									Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+									To="#005A8B" Duration="0:0:0.2"/>
+							</Storyboard>
+						</BeginStoryboard>
+					</EventTrigger>
+				</Style.Triggers>
+			</Style>
+		</Button.Style>
+		<Button.Content>
+			<StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+				<!-- Seta para cima usando Path -->
+				<Path Data="M 0,10 L 5,0 L 10,10 Z" Fill="White" Width="20" Height="20" HorizontalAlignment="Center"/>
+				<TextBlock Text=" Subir" VerticalAlignment="Center" Margin="5,0,0,0"/>
+			</StackPanel>
+		</Button.Content>
+	</Button>
+			<!-- Botão de Lançamento logo abaixo da Barra de Pesquisa -->
+			<Button Content="Lançamento" Width="200" Height="50" HorizontalAlignment="Center"
+					VerticalAlignment="Top" Margin="0,80,0,0" Background="#FF6200" Foreground="White"
+					FontSize="16" BorderBrush="Black" BorderThickness="1" Click="LaunchButton_Click"/>
+			<Button Content="Em Alta" Width="150" Height="50" Background="#FF0000" Foreground="White"
+        FontSize="16" BorderBrush="Black" BorderThickness="1"
+        HorizontalAlignment="Center" VerticalAlignment="Center"
+        Click="HighButton_Click" Margin="5">
+				<Button.Style>
+					<Style TargetType="Button">
+						<Style.Triggers>
+							<!-- Quando o mouse passar sobre o botão -->
+							<Trigger Property="IsMouseOver" Value="True">
+								<Setter Property="Background" Value="#FF4500"/>
+								<!-- Cor de fundo muda para laranja -->
+							</Trigger>
+						</Style.Triggers>
+					</Style>
+				</Button.Style>
+			</Button>
+		</Grid>
+	</Grid>
+	
 
 </ContentPage>
